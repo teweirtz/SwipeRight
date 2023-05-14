@@ -11,14 +11,10 @@ function Header() {
       <IconButton>
         <PersonIcon  fontSize="large" className="header__icon"/>
       </IconButton>
-
-      {/* <img
-        className="header__logo" img src= {logo}
-      /> */}
-
-    <IconButton>
-      <ForumIcon fontSize="large" className="header__icon"/>
-    </IconButton>
+        {/* <img className="header__logo" src={logo} alt="Tinder logo"/> */}
+      <IconButton>
+        <ForumIcon fontSize="large" className="header__icon"/>
+      </IconButton>
     </div>
   );
 }
