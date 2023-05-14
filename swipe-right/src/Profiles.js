@@ -1,9 +1,21 @@
-import React from 'react'
+import React, {useState} from 'react';
+import "./Profiles.css"
 
 function Profiles() {
+
+  const [people, setPeople] = useState([
+    {
+      name: 'Taylor Weirtz'
+    }
+  ]);
+
   return (
-    <div>Profiles</div>
+    <div className="profiles">
+    {people.map((person) => (
+      <h1>{person.name}</h1>
+    ))}
+    </div>
   )
 }
 
-export default Profiles
+export default Profiles;

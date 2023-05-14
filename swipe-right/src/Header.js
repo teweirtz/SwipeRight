@@ -7,19 +7,17 @@ import logo from './Tinder_logo_PNG6.png'
 
 function Header() {
   return (
-    <div className="Header">
+    <div className="header">
       <IconButton>
-        <PersonIcon  fontSize="large" className="header_icon"/>
+        <PersonIcon  fontSize="large" className="header__icon"/>
       </IconButton>
 
       {/* <img
-        className="header__logo"
-        img src= {logo}
-        alt=""
+        className="header__logo" img src= {logo}
       /> */}
 
     <IconButton>
-      <ForumIcon fontSize="large" className="header_icon"/>
+      <ForumIcon fontSize="large" className="header__icon"/>
     </IconButton>
     </div>
   );
