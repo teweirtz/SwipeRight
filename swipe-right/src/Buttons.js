@@ -10,7 +10,7 @@ import {IconButton} from '@mui/material';
 function Buttons() {
   return (
     <div className="swipeButtons">
-        <IconButton className="swiperButtons__repeat">
+        <IconButton className="swipeButtons__repeat">
           <ReplayIcon fontSize="large" />
         </IconButton>
         <IconButton className="swipeButtons__left">
@@ -22,7 +22,7 @@ function Buttons() {
         <IconButton className="swipeButtons__right">
           <FavoriteIcon fontSize="large" />
         </IconButton>
-        <IconButton className="swipeButtons__">
+        <IconButton className="swipeButtons__lightning">
           <FlashOnIcon fontSize="large" />
         </IconButton>
     </div>
