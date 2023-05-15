@@ -1,18 +1,17 @@
 import React from 'react';
-import './App.css';
-import Header from './Header';
-import Profiles from './Profiles';
-import Buttons from './Buttons';
+// import Header from './Pages/Header';
+// import Profiles from './Pages/Profiles';
+// import Buttons from './Pages/Buttons';
+import Main from './Pages/Main';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-
-      <Header />
-      <Profiles />
-      <Buttons />
-    
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
