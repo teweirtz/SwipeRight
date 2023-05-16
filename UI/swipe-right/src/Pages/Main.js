@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import Navigation from '../Components/Navigation';
+import './Main.css';
 
 function Main() {
     const authToken=true
@@ -7,9 +9,10 @@ function Main() {
     }
   return (
     <div className="Main">
-    <button classname="signUpButton" onClick={handleClick}>
-        {authToken ? 'Signout' : 'Create Account'}
-    </button>
+        <h1>SwipeRightForEmployment</h1>
+        <button className="primary__button" onClick={handleClick}>
+            {authToken ? 'Signout' : 'Create Account'}
+        </button>
     </div>
   )
 }
