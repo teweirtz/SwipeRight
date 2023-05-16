@@ -8,11 +8,14 @@ function Main() {
         console.log('click')
     }
   return (
-    <div className="Main">
-        <h1>SwipeRightForEmployment</h1>
-        <button className="primary__button" onClick={handleClick}>
-            {authToken ? 'Signout' : 'Create Account'}
-        </button>
+    <div className="overlay">
+        <Navigation minimal={false}/>
+            <div className="Main">
+                <h1>SwipeRightForEmployment</h1>
+                    <button className="primary__button" onClick={handleClick}>
+                    {authToken ? 'Signout' : 'Create Account'}
+                    </button>
+            </div>
     </div>
   )
 }
