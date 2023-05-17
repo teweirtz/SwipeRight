@@ -11,4 +11,35 @@
     border-radius: 10px;
     padding: 40px;
 }
+.sign__up .close-icon {
+    float: right;
+}
 
+.sign__up form {
+    display: flex;
+    flex-direction: column;
+}
+
+.sign__up input[type=password],
+.sign__up input[type=email] {
+    padding: 8px;
+    margin: 8px;
+    font-size: 17px;
+}
+
+.signup__button {
+    color: rgb(121, 119, 119);
+    background-color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: solid 2px rgb(121, 119, 119);
+    margin: 6px;
+}
+
+.signup__button:hover {
+    color: rgb(48, 48, 48);
+    border: solid 2px rgb(48, 48, 48);
+}
