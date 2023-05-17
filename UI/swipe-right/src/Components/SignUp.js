@@ -6,16 +6,24 @@ const SignUp = ({setShowSignUp}) => {
   const [password, setPassword] = useState(null)
   const [confirmPassword, setConfirmPassword] = useState(null)
   const [error, setError] = useState(null)
-console.log(email, password, confirmPassword)
-  
+  console.log(email, password, confirmPassword)
+
+const isSignUp = true
+
 const handleClick = () => {
   setShowSignUp(false)
 }
 const handleSubmit = (e) => {
   e.preventDefault()
+  try {
+    if( isSignUp && (password !== confirmPassword)) {
+    setError('Passwords do not match!')
+  }
+  console.log('passwords do not match')
+} catch (error) {
+  console.log(error)
 }
- const isSignUp = true
-
+}
     return (
     <div className="sign__up">
       <h2>{isSignUp ? 'CREATE ACCOUNT': 'LOG IN'}</h2>
