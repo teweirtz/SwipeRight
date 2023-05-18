@@ -6,7 +6,7 @@ const Register = () => {
         console.log('submit')
     }
     const handleChange = () => {
-        console.log('submit')
+        console.log('change')
     }
     return (
         <>
@@ -81,8 +81,53 @@ const Register = () => {
                         checked={false}
                         />
                     <label htmlFor="woman__gender__identity">Woman</label>
+                    </div>
 
-                        </div>
+                    <label>Show Me</label>
+                    <div className='form__container'>
+                    <input
+                        id="man__gender__interest"
+                        type="radio"
+                        name="gender__interest"
+                        value="man"
+                        onChange={handleChange}
+                        checked={false}
+                        />
+                    <label htmlFor="man__gender__interest">Man</label>
+                    <input
+                        id="woman__gender__interest"
+                        type="radio"
+                        name="gender__interest"
+                        value="woman"
+                        onChange={handleChange}
+                        checked={false}
+                        />
+                    <label htmlFor="woman__gender__interest">Woman</label>
+                    </div>
+
+                    <label htmlFor="about">About</label>
+                    <input 
+                        id="about"
+                        type="text"
+                        name="about"
+                        required={true}
+                        placeholder="I like..."
+                        value={""}
+                        onChange={handleChange}
+                        />
+                        <input type="submit"/>
+                </section>
+                <section>
+                <label htmlFor="about">Profile Photo</label>
+                    <input
+                    type="url"
+                    name="url"
+                    id="url"
+                    onChange={handleChange}
+                    required={true}
+                    />
+                    <div className='photo__container'>
+                    </div>
                 </section>
             </form>
         </div>
