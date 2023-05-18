@@ -23,6 +23,35 @@ const Register = () => {
                         value={""}
                         onChange={handleChange}
                         />
+
+                    <label>Birthday</label>
+                    <input
+                        id="dob_day"
+                        type="number"
+                        name="dob_day"
+                        placeholder="DD"
+                        required={true}
+                        value={""}
+                        onChange={handleChange}
+                        />
+                    <input
+                        id="dob_month"
+                        type="number"
+                        name="dob_month"
+                        placeholder="MM"
+                        required={true}
+                        value={""}
+                        onChange={handleChange}
+                        />
+                    <input
+                        id="dob_year"
+                        type="number"
+                        name="dob_year"
+                        placeholder="YYYY"
+                        required={true}
+                        value={""}
+                        onChange={handleChange}
+                        />
                 </section>
             </form>
         </div>
