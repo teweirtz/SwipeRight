@@ -4,10 +4,11 @@ import whiteLogo from "../images/tinder_logo_white.png";
 import colorLogo from "../images/color-logo-tinder.png";
 
 const Navigation = ({ authToken, minimal, setShowSignUp, showSignUp, setIsSignUp }) => {
+    
     const handleClick = () => {
-      setShowSignUp(true);
-      setIsSignUp(false);
-    };
+      setShowSignUp(true)
+      setIsSignUp(false)
+    }
   
     return (
         <nav>
@@ -20,6 +21,6 @@ const Navigation = ({ authToken, minimal, setShowSignUp, showSignUp, setIsSignUp
             </button>
           )}
         </nav>
-      );
-    };
+      )
+    }
   export default Navigation;
