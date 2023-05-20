@@ -8,8 +8,8 @@ const Register = () => {
         first_name: "",
         dob_day: "",
         dob_month:"",
-        gender_identity: "",
-        gender_interest: "",
+        gender__identity: "man",
+        gender__interest: "woman",
         email: "",
         url: "",
         about: "",
@@ -19,10 +19,8 @@ const Register = () => {
         console.log('submit')
     }
     const handleChange = (e) => {
-        console.log('e', e)
-        const value = e.target.value
+        const value = e.target.type === "checked" ? e.target.checked : e.target.value
         const name = e.target.name
-        console.log('value' + value, 'name' + name)
 
         setRegistrationData((prevState) => ({
             ...prevState,
@@ -91,7 +89,7 @@ const Register = () => {
                         name="gender__identity"
                         value="man"
                         onChange={handleChange}
-                        checked={registrationData.gender_identity === "man"}
+                        checked={registrationData.gender__identity === "man"}
                         />
                     <label htmlFor="man__gender__identity">Man</label>
                     <input
@@ -100,7 +98,7 @@ const Register = () => {
                         name="gender__identity"
                         value="woman"
                         onChange={handleChange}
-                        checked={registrationData.gender_identity === "woman"}
+                        checked={registrationData.gender__identity === "woman"}
                         />
                     <label htmlFor="woman__gender__identity">Woman</label>
                     </div>
@@ -113,7 +111,7 @@ const Register = () => {
                         name="gender__interest"
                         value="man"
                         onChange={handleChange}
-                        checked={registrationData.gender_interest === 'man'}
+                        checked={registrationData.gender__interest === 'man'}
                         />
                     <label htmlFor="man__gender__interest">Man</label>
                     <input
@@ -122,7 +120,7 @@ const Register = () => {
                         name="gender__interest"
                         value="woman"
                         onChange={handleChange}
-                        checked={registrationData.gender_interest === 'woman'}
+                        checked={registrationData.gender__interest === 'woman'}
                         />
                     <label htmlFor="woman__gender__interest">Woman</label>
                     </div>
