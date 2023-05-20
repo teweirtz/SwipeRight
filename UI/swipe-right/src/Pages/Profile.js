@@ -1,5 +1,6 @@
-import React from "react";
+import React {useState} from "react";
 import TinderCard from 'react-tinder-card';
+import ChatBox from '../Components/ChatDisplay'
 import './Profile.css'
  
 const Profile = () => {
@@ -34,6 +35,9 @@ const Profile = () => {
                                 </div>
                             </TinderCard>
                 )}
+                <div className="swipe_info">
+                    {lastDirections ? <p> You swiped {lastDire4ction}</p> : <p/>}
+                </div>
                 </div>
             </div>
         </div>
