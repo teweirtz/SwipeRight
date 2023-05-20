@@ -3,12 +3,33 @@ import Navigation from '../Components/Navigation'
 import './Register.css'
 
 const Register = () => {
+    const [registrationData, setRegistrationData] = useState({
+        user_id: "",
+        first_name: "",
+        dob_day: "",
+        dob_month:"",
+        gender_identity: "",
+        gender_interest: "",
+        email: "",
+        url: "",
+        about: "",
+        matches: []
+    })
     const handleSubmit = () => {
         console.log('submit')
     }
-    const handleChange = () => {
-        console.log('change')
+    const handleChange = (e) => {
+        console.log('e', e)
+        const value = e.target.value
+        const name = e.target.name
+        console.log('value' + value, 'name' + name)
+
+        setRegistrationData((prevState) => ({
+            ...prevState,
+            [name]: value
+        }))
     }
+    console.log(registrationData)
     return (
         <>
         <Navigation 
@@ -27,7 +48,7 @@ const Register = () => {
                         name="first_name"
                         placeholder="First Name"
                         required={true}
-                        value={""}
+                        value={registrationData.first_name}
                         onChange={handleChange}
                         />
 
@@ -39,7 +60,7 @@ const Register = () => {
                         name="dob_day"
                         placeholder="DD"
                         required={true}
-                        value={""}
+                        value={registrationData.dob_day}
                         onChange={handleChange}
                         />
                     <input
@@ -48,7 +69,7 @@ const Register = () => {
                         name="dob_month"
                         placeholder="MM"
                         required={true}
-                        value={""}
+                        value={registrationData.dob_month}
                         onChange={handleChange}
                         />
                     <input
@@ -57,7 +78,7 @@ const Register = () => {
                         name="dob_year"
                         placeholder="YYYY"
                         required={true}
-                        value={""}
+                        value={registrationData.dob_year}
                         onChange={handleChange}
                         />
                     </div>
@@ -70,7 +91,7 @@ const Register = () => {
                         name="gender__identity"
                         value="man"
                         onChange={handleChange}
-                        checked={false}
+                        checked={registrationData.gender_identity === "man"}
                         />
                     <label htmlFor="man__gender__identity">Man</label>
                     <input
@@ -79,7 +100,7 @@ const Register = () => {
                         name="gender__identity"
                         value="woman"
                         onChange={handleChange}
-                        checked={false}
+                        checked={registrationData.gender_identity === "woman"}
                         />
                     <label htmlFor="woman__gender__identity">Woman</label>
                     </div>
@@ -92,7 +113,7 @@ const Register = () => {
                         name="gender__interest"
                         value="man"
                         onChange={handleChange}
-                        checked={false}
+                        checked={registrationData.gender_interest === 'man'}
                         />
                     <label htmlFor="man__gender__interest">Man</label>
                     <input
@@ -101,7 +122,7 @@ const Register = () => {
                         name="gender__interest"
                         value="woman"
                         onChange={handleChange}
-                        checked={false}
+                        checked={registrationData.gender_interest === 'woman'}
                         />
                     <label htmlFor="woman__gender__interest">Woman</label>
                     </div>
@@ -113,7 +134,7 @@ const Register = () => {
                         name="about"
                         required={true}
                         placeholder="I like..."
-                        value={""}
+                        value={registrationData.about}
                         onChange={handleChange}
                         />
                         <input type="submit"/>
@@ -128,6 +149,7 @@ const Register = () => {
                     required={true}
                     />
                     <div className='photo__container'>
+                        <img src={registrationData.url} alt="preview"/>
                     </div>
                 </section>
             </form>
