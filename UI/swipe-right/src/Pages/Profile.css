@@ -3,7 +3,7 @@
     justify-content: space-between;
 }
 
-.profile .swipe-container {
+.profile .swipe_container {
     width: 70%;
     display: flex;
     flex-direction: column;
@@ -16,7 +16,7 @@
     position: absolute;
 }
 
-.profile .card-container {
+.profile .card_container {
     width: 400px;
     height: 650px;
 }
@@ -33,7 +33,7 @@
     margin-top: 0;
 }
 
-.profile .swipe-info {
+.profile .swipe_info {
     position: absolute;
     bottom: 0;
     padding: 10px;

@@ -1,0 +1,62 @@
+.chat_box {
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    width: 30%;
+    text-align: left;
+    z-index: 1;
+  }
+  
+  .chat_box .chat_header {
+    background: linear-gradient(45deg, rgb(254, 48, 114), rgb(255, 89, 64));
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .chat_box .option {
+    border: none;
+    background-color: rgb(255, 255, 255);
+    border-bottom: solid 4px rgb(243, 33, 33);
+    font-size: 20px;
+    margin: 2px;
+    padding: 10px;
+  }
+  
+  .chat_box .option:disabled {
+    border-bottom: solid 4px rgb(187, 187, 187);
+  }
+  
+  .chat_box .profile,
+  .chat_box .log_out_icon {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .img_container {
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 10px;
+  }
+  
+  .img_container img {
+    width: 100%;
+  }
+  
+  .chat_display,
+  .matches {
+    padding: 20px;
+    height: 60vh;
+    overflow-y: auto;
+  }
+  
+  .chat_input {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }

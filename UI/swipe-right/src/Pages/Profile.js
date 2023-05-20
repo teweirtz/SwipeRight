@@ -1,10 +1,15 @@
-import React {useState} from "react";
+import React, {useState} from "react";
 import TinderCard from 'react-tinder-card';
-import ChatBox from '../Components/ChatDisplay'
-import './Profile.css'
+import ChatBox from '../Components/ChatBox';
+// import './Profile.css'
  
 const Profile = () => {
-    const characters = db
+    const characters = [
+        {
+            name: 'Taylor Weirtz',
+            url: 'https://imgur.com/t/wholesome/i4jfe19'
+        }
+    ]
     const [lastDirection, setLastDirection] = useState()
 
 
@@ -19,24 +24,24 @@ const Profile = () => {
 
     return (
         <div className="profile">
-            <MessageContainer/>
+            <ChatBox/>
             <div className = "swipe_container">
                 <div className="card_container">
-                {filteredGenderedUsers?.map((genderedUser) =>
+                {characters?.map((character) =>
                             <TinderCard
                                 className="swipe"
-                                key={genderedUser.user_id}
-                                onSwipe={(dir) => swiped(dir, genderedUser.user_id)}
-                                onCardLeftScreen={() => outOfFrame(genderedUser.first_name)}>
+                                key={character.name}
+                                onSwipe={(dir) => swiped(dir, character.name)}
+                                onCardLeftScreen={() => outOfFrame(character.name)}>
                                 <div
-                                    style={{backgroundImage: "url(" + genderedUser.url + ")"}}
+                                    style={{backgroundImage: "url(" + character.url + ")"}}
                                     className="card">
-                                    <h3>{genderedUser.first_name}</h3>
+                                    <h3>{character.name}</h3>
                                 </div>
                             </TinderCard>
                 )}
                 <div className="swipe_info">
-                    {lastDirections ? <p> You swiped {lastDire4ction}</p> : <p/>}
+                    {lastDirection ? <p> You swiped {lastDirection}</p> : <p/>}
                 </div>
                 </div>
             </div>

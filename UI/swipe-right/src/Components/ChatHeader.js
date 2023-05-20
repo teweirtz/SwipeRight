@@ -1,6 +1,7 @@
 import React from "react";
+import './Chat.css'
 
-const Header = () => {
+const ChatHeader = () => {
     return (
     <div className = "chat_header">
         <div className = "profile">
@@ -9,9 +10,9 @@ const Header = () => {
             </div>
             <h3>UserName</h3>
         </div>
-        <i className="log_out_icon"></i>
+        <i className="log_out_icon">⇦</i>
     </div>
     )
 }
 
-export default Header;
+export default ChatHeader;
