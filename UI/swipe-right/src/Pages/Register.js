@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Navigation from '../Components/Navigation'
+import './Register.css'
 
 const Register = () => {
     const handleSubmit = () => {
