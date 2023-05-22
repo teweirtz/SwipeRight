@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import Navigation from '../Components/Navigation';
-import SignUp from '../Components/SignUp';
-import './Main.css';
+import React, { useState } from 'react'
+import Navigation from '../Components/Navigation'
+import SignUp from '../Components/SignUp'
+import './Main.css'
 import {useCookies} from "react-cookie"
 
 const Main = () => {
@@ -41,7 +41,7 @@ const Main = () => {
         )}
       </div>
     </div>
-  );
+  )
 }
 
-export default Main;
+export default Main

@@ -1,16 +1,16 @@
-import React, {useState} from "react";
-import TinderCard from 'react-tinder-card';
-import ChatBox from '../Components/ChatBox';
-// import './Profile.css'
+import React, {useState, useEffect} from "react"
+import TinderCard from 'react-tinder-card'
+import ChatBox from '../Components/ChatBox'
+import {useCookies} from 'react-cookie'
+import axios from 'axios'
  
 const Profile = () => {
-    const characters = [
-        {
-            name: 'Taylor Weirtz',
-            url: 'https://imgur.com/t/wholesome/i4jfe19'
-        }
-    ]
+    const [user, setUser] = useState(null)
+    const [genderedUsers, setGenderedUsers] = useState(null)
     const [lastDirection, setLastDirection] = useState()
+    const [cookies, setCookie, removeCookie] = useCookies(['user'])
+
+    const userId = cookies.UserId
 
 
     const swiped = (direction, nameToDelete) => {
