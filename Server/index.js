@@ -44,7 +44,7 @@ app.post('/register', async (req, res) => {
         const token = jwt.sign(insertedUser, sanitizedEmail, {
             expiresIn: 60 *24,
         })
-        res.status(201).json({token, userId: generatedUserId})
+        res.status(201).json({token})
     } catch (err) {
         console.log(err)
     } finally {
@@ -76,6 +76,26 @@ app.post('/login', async (req, res) => {
 
     } catch (err) {
         console.log(err)
+    } finally {
+        await client.close()
+    }
+})
+
+app.put('/addmatch', async (req, res) => {
+    const client = new MongoClient(uri)
+    const {userId, matchedUserId} = req.body
+
+    try {
+        await client.connect()
+        const database = client.db('app-data')
+        const users = database.collection('users')
+
+        const query = {user_id: userId}
+        const updateDocument = {
+            $push: {matches: {user_id: matchedUserId}}
+        }
+        const user = await users.updateOne(query, updateDocument)
+        res.send(user)
     } finally {
         await client.close()
     }
