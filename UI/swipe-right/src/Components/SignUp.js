@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import './SignUp.css';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import { useCookies } from 'react-cookie';
+import React, { useState } from 'react'
+import './SignUp.css'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import { useCookies } from 'react-cookie'
 
 const SignUp = ({ setShowModal, isSignUp }) => {
   const [email, setEmail] = useState(null)
@@ -18,26 +18,30 @@ const SignUp = ({ setShowModal, isSignUp }) => {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      if (isSignUp && password !== confirmPassword) {
-        setError('Passwords do not match!');
-        return
-      }
-      const response = await axios.post('https://localhost:8000/register', { email, password });
-      const success = response.status === 201;
-      
-      setCookie('Email', response.data.email)
-      setCookie('UserId', response.datauserId)
-      setCookie('AuthToken', response.data.token)
+    e.preventDefault()
 
-      if (success) {
-        navigate('/register');
+    try {
+      if (isSignUp && (password !== confirmPassword)) {
+          setError('Passwords need to match!')
+          return
       }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+
+      const response = await axios.post(`http://localhost:8000/${isSignUp ? 'signup' : 'login'}`, { email, password })
+
+      setCookie('AuthToken', response.data.token)
+      setCookie('UserId', response.data.userId)
+
+      const success = response.status === 201
+      if (success && isSignUp) navigate ('/register')
+      if (success && !isSignUp) navigate ('/profile')
+
+      window.location.reload()
+
+  } catch (error) {
+      console.log(error)
+  }
+
+}
 
   return (
     <div className="sign__up">
@@ -82,4 +86,4 @@ const SignUp = ({ setShowModal, isSignUp }) => {
   )
 }
 
-export default SignUp;
+export default SignUp
