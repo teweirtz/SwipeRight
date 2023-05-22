@@ -3,7 +3,7 @@ import './Chat.css'
 import { useCookies } from "react-cookie"
 import axios from "axios"
 
-const Matches = () => {
+const Matches = ({ matches, setClickedUser }) => {
     
 const [matchedProfiles, setMatchedProfiles] = useState(null);
  const [cookies, setCookie, removeCookie] = useCookies(null);
