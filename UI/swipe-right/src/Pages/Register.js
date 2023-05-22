@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import Navigation from '../Components/Navigation'
 import './Register.css'
 import { useCookies } from 'react-cookie'
+import { useNavigate} from 'react-router-dom'
 import axios from 'axios'
 
 const Register = () => {
