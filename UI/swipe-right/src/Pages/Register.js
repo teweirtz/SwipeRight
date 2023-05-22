@@ -5,7 +5,7 @@ import './Register.css'
 const Register = () => {
     const [registrationData, setRegistrationData] = useState({
         user_id: "",
-        first_name: "",
+        full_name: "",
         dob_day: "",
         dob_month:"",
         gender__identity: "man",
@@ -39,14 +39,14 @@ const Register = () => {
             <h2>Create Account</h2>
             <form onSubmit={handleSubmit}>
                 <section>
-                    <label htmlFor="first_name">First Name</label>
+                    <label htmlFor="full_name">Full Name</label>
                     <input
-                        id="first_name"
+                        id="full_name"
                         type="text"
-                        name="first_name"
-                        placeholder="First Name"
+                        name="full_name"
+                        placeholder="Full Name"
                         required={true}
-                        value={registrationData.first_name}
+                        value={registrationData.full_name}
                         onChange={handleChange}
                         />
 
