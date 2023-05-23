@@ -1,6 +1,8 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
+import '../index.css';
+
 
 const MatchesDisplay = ({ matches, setClickedUser }) => {
   const [matchedProfiles, setMatchedProfiles] = useState(null);

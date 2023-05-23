@@ -1,7 +1,9 @@
-import Nav from '../Components/Nav'
-import AuthModal from "../Components/AuthModal"
-import {useState} from 'react'
-import {useCookies} from "react-cookie"
+import Nav from '../Components/Nav';
+import AuthModal from "../Components/AuthModal";
+import React, {useState} from 'react';
+import {useCookies} from "react-cookie";
+import '../index.css';
+
 
 const Home = () => {
     const [showModal, setShowModal] = useState(false)
@@ -43,4 +45,4 @@ const Home = () => {
         </div>
     )
 }
-export default Home
+export default Home;

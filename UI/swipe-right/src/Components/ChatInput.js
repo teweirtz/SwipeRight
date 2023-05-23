@@ -1,5 +1,7 @@
-import { useState} from 'react'
-import axios from 'axios'
+import React, { useState} from 'react';
+import axios from 'axios';
+import '../index.css';
+
 
 const ChatInput = ({ user, clickedUser, getUserMessages, getClickedUsersMessages }) => {
     const [textArea, setTextArea] = useState("")
@@ -33,4 +35,4 @@ const ChatInput = ({ user, clickedUser, getUserMessages, getClickedUsersMessages
     )
 }
 
-export default ChatInput
+export default ChatInput;

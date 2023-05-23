@@ -1,4 +1,7 @@
-import { useCookies } from 'react-cookie'
+import { useCookies } from 'react-cookie';
+import React from 'react';
+import '../index.css';
+
 
 const ChatHeader = ({ user }) => {
     const [ cookies, setCookie, removeCookie ] = useCookies(['user'])
@@ -22,4 +25,4 @@ const ChatHeader = ({ user }) => {
     )
 }
 
-export default ChatHeader
+export default ChatHeader;

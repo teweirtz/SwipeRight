@@ -1,7 +1,9 @@
-import { useState } from 'react'
-import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
-import { useCookies } from 'react-cookie'
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
+import '../index.css';
+
 
 
 const AuthModal = ({ setShowModal,  isSignUp }) => {
@@ -87,4 +89,4 @@ const AuthModal = ({ setShowModal,  isSignUp }) => {
         </div>
     )
 }
-export default AuthModal
+export default AuthModal;

@@ -1,8 +1,10 @@
-import TinderCard from 'react-tinder-card'
-import {useEffect, useState} from 'react'
-import ChatContainer from '../Components/ChatContainer'
-import {useCookies} from 'react-cookie'
-import axios from 'axios'
+import TinderCard from 'react-tinder-card';
+import React, {useEffect, useState} from 'react';
+import ChatContainer from '../Components/ChatContainer';
+import {useCookies} from 'react-cookie';
+import axios from 'axios';
+import '../index.css';
+
 
 const Dashboard = () => {
     const [user, setUser] = useState(null)
@@ -105,4 +107,4 @@ const Dashboard = () => {
         </>
     )
 }
-export default Dashboard
+export default Dashboard;

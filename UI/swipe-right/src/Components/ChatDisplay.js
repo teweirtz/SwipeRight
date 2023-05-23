@@ -1,7 +1,9 @@
-import Chat from './Chat'
-import ChatInput from './ChatInput'
-import axios from 'axios'
-import {useState, useEffect} from "react"
+import Chat from './Chat';
+import ChatInput from './ChatInput';
+import axios from 'axios';
+import React, {useState, useEffect} from "react";
+import '../index.css';
+
 
 
 const ChatDisplay = ({ user , clickedUser }) => {
@@ -69,4 +71,4 @@ const ChatDisplay = ({ user , clickedUser }) => {
     )
 }
 
-export default ChatDisplay
+export default ChatDisplay;

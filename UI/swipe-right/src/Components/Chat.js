@@ -1,7 +1,9 @@
-import ChatHeader from './ChatHeader'
-import MatchesDisplay from './MatchesDisplay'
-import ChatDisplay from './ChatDisplay'
-import { useState } from 'react'
+import ChatHeader from './ChatHeader';
+import MatchesDisplay from './MatchesDisplay';
+import ChatDisplay from './ChatDisplay';
+import React, { useState } from 'react';
+import '../index.css';
+
 
 const ChatContainer = ({ user }) => {
     const [ clickedUser, setClickedUser ] = useState(null)
@@ -22,4 +24,4 @@ const ChatContainer = ({ user }) => {
     )
 }
 
-export default ChatContainer
+export default ChatContainer;

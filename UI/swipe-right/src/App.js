@@ -1,8 +1,11 @@
-import Home from './Pages/Home'
-import Dashboard from './Pages/Dashboard.js'
-import OnBoarding from './Pages/Onboarding.js'
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
-import {useCookies} from 'react-cookie'
+import React from 'react';
+import Home from './Pages/Home';
+import Dashboard from './Pages/Dashboard.js';
+import OnBoarding from './Pages/Onboarding.js';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {useCookies} from 'react-cookie';
+import './index.css';
+
 
 const App = () => {
     const [cookies, setCookie, removeCookie] = useCookies(['user'])

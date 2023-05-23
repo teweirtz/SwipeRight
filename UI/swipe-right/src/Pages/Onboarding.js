@@ -1,8 +1,10 @@
-import Nav from '../Components/Nav'
-import {useState} from 'react'
-import {useCookies} from 'react-cookie'
-import {useNavigate} from 'react-router-dom'
-import axios from 'axios'
+import Nav from '../Components/Nav';
+import React, {useState} from 'react';
+import {useCookies} from 'react-cookie';
+import {useNavigate} from 'react-router-dom';
+import axios from 'axios';
+import '../index.css';
+
 
 const OnBoarding = () => {
     const [cookies, setCookie, removeCookie] = useCookies(null)
@@ -216,4 +218,4 @@ const OnBoarding = () => {
         </>
     )
 }
-export default OnBoarding
+export default OnBoarding;
