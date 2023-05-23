@@ -1,16 +1,17 @@
-import React, {useState, useEffect} from "react"
 import TinderCard from 'react-tinder-card'
-import ChatBox from '../Components/ChatBox'
+import {useEffect, useState} from 'react'
+import ChatContainer from '../Components/ChatContainer'
 import {useCookies} from 'react-cookie'
 import axios from 'axios'
- 
-const Profile = () => {
+
+const Dashboard = () => {
     const [user, setUser] = useState(null)
     const [genderedUsers, setGenderedUsers] = useState(null)
     const [lastDirection, setLastDirection] = useState()
     const [cookies, setCookie, removeCookie] = useCookies(['user'])
 
     const userId = cookies.UserId
+
 
     const getUser = async () => {
         try {
@@ -74,15 +75,15 @@ const Profile = () => {
 
 
     console.log('filteredGenderedUsers ', filteredGenderedUsers)
-
     return (
         <>
-        {user &&
-        <div className="profile">
-            <ChatBox user={user}/>
-            <div className = "swipe_container">
-                <div className="card_container">
-                {filteredGenderedUsers?.map((genderedUser) =>
+            {user &&
+            <div className="dashboard">
+                <ChatContainer user={user}/>
+                <div className="swipe-container">
+                    <div className="card-container">
+
+                        {filteredGenderedUsers?.map((genderedUser) =>
                             <TinderCard
                                 className="swipe"
                                 key={genderedUser.user_id}
@@ -94,15 +95,14 @@ const Profile = () => {
                                     <h3>{genderedUser.first_name}</h3>
                                 </div>
                             </TinderCard>
-                    )}
-                    <div className="swipe_info">
-                        {lastDirection ? <p> You swiped {lastDirection}</p> : <p/>}
+                        )}
+                        <div className="swipe-info">
+                            {lastDirection ? <p>You swiped {lastDirection}</p> : <p/>}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>}
-    </>
+            </div>}
+        </>
     )
- }
-
-export default Profile;
+}
+export default Dashboard

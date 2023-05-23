@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from "react"
-import Chat from "./Chat"
-import ChatInput from "./ChatInput"
-import './Chat.css'
+import Chat from './Chat'
+import ChatInput from './ChatInput'
 import axios from 'axios'
+import {useState, useEffect} from "react"
+
 
 const ChatDisplay = ({ user , clickedUser }) => {
     const userId = user?.user_id
@@ -58,12 +58,13 @@ const ChatDisplay = ({ user , clickedUser }) => {
     })
 
     const descendingOrderMessages = messages?.sort((a,b) => a.timestamp.localeCompare(b.timestamp))
+
     return (
         <>
         <Chat descendingOrderMessages={descendingOrderMessages}/>
-        <ChatInput
-          user={user}
-          clickedUser={clickedUser} getUserMessages={getUsersMessages} getClickedUsersMessages={getClickedUsersMessages}/>
+     <ChatInput
+         user={user}
+         clickedUser={clickedUser} getUserMessages={getUsersMessages} getClickedUsersMessages={getClickedUsersMessages}/>
         </>
     )
 }

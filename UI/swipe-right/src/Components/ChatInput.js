@@ -1,10 +1,8 @@
-import React, {useState} from "react"
-import './Chat.css'
-import axios from "axios"
+import { useState} from 'react'
+import axios from 'axios'
 
 const ChatInput = ({ user, clickedUser, getUserMessages, getClickedUsersMessages }) => {
     const [textArea, setTextArea] = useState("")
-
     const userId = user?.user_id
     const clickedUserId = clickedUser?.user_id
 
@@ -26,9 +24,10 @@ const ChatInput = ({ user, clickedUser, getUserMessages, getClickedUsersMessages
         }
     }
 
+
     return (
-        < div className = "chat_input">
-            <textarea value={textArea} onChange = {(e) => setTextArea(e.target.value)}/>
+        <div className="chat-input">
+            <textarea value={textArea} onChange={(e) => setTextArea(e.target.value)}/>
             <button className="secondary-button" onClick={addMessage}>Submit</button>
         </div>
     )

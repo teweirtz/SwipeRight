@@ -1,11 +1,10 @@
-import React, {useState} from 'react'
-import Navigation from '../Components/Navigation'
-import './Register.css'
-import { useCookies } from 'react-cookie'
-import { useNavigate} from 'react-router-dom'
+import Nav from '../Components/Nav'
+import {useState} from 'react'
+import {useCookies} from 'react-cookie'
+import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 
-const Register = () => {
+const OnBoarding = () => {
     const [cookies, setCookie, removeCookie] = useCookies(null)
     const [formData, setFormData] = useState({
         user_id: cookies.UserId,
@@ -51,7 +50,7 @@ const Register = () => {
 
     return (
         <>
-            <Navigation
+            <Nav
                 minimal={true}
                 setShowModal={() => {
                 }}
@@ -217,5 +216,4 @@ const Register = () => {
         </>
     )
 }
-
-export default Register
+export default OnBoarding
