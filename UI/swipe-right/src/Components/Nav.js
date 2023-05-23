@@ -1,7 +1,7 @@
 import React from "react";
 import whiteLogo from "../images/tinder_logo_white.png";
 import colorLogo from "../images/color-logo-tinder.png";
-import '../index.css';
+import './Components.css';
 
 const Nav = ({ authToken, minimal, setShowModal, showModal, setIsSignUp }) => {
   const handleClick = () => {

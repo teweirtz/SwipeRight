@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {useCookies} from 'react-cookie';
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
-import '../index.css';
+import './Onboarding.css';
 
 
 const OnBoarding = () => {

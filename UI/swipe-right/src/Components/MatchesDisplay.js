@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
-import '../index.css';
+import './Components.css';
 
 
 const MatchesDisplay = ({ matches, setClickedUser }) => {

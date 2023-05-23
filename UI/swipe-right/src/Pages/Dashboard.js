@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import ChatContainer from '../Components/ChatContainer';
 import {useCookies} from 'react-cookie';
 import axios from 'axios';
-import '../index.css';
+import './Dashboard.css';
 
 
 const Dashboard = () => {

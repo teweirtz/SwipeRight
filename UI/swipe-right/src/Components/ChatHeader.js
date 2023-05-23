@@ -1,6 +1,6 @@
 import { useCookies } from 'react-cookie';
 import React from 'react';
-import '../index.css';
+import './Components.css';
 
 
 const ChatHeader = ({ user }) => {

@@ -2,7 +2,7 @@ import ChatHeader from './ChatHeader';
 import MatchesDisplay from './MatchesDisplay';
 import ChatDisplay from './ChatDisplay';
 import React, { useState } from 'react';
-import '../index.css';
+import './Components.css';
 
 
 const ChatContainer = ({ user }) => {

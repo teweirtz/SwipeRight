@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
 import axios from 'axios';
-import '../index.css';
+import './Components.css';
 
 
 const ChatInput = ({ user, clickedUser, getUserMessages, getClickedUsersMessages }) => {

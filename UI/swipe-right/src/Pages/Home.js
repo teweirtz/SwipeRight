@@ -2,7 +2,7 @@ import Nav from '../Components/Nav';
 import AuthModal from "../Components/AuthModal";
 import React, {useState} from 'react';
 import {useCookies} from "react-cookie";
-import '../index.css';
+import './Home.css'
 
 
 const Home = () => {
