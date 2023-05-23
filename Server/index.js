@@ -6,9 +6,11 @@ const jwt = require('jsonwebtoken')
 const cors = require('cors')
 const uri = 'mongodb+srv://teweirtz:Ammo,dawg1@cluster0.tkes3cu.mongodb.net/Cluster0?retryWrites=true&w=majority'
 const bcrypt = require('bcrypt')
+require('dotenv').config()
 
 const app = express()
 app.use(cors())
+app.use(express.json())
 
 app.get('/', (req, res) => {
     res.json('Hello World')
@@ -16,7 +18,6 @@ app.get('/', (req, res) => {
 
 app.post('/signup', async (req, res) => {
     const client = new MongoClient(uri)
-    console.log(req.body)
     const { email, password } = req.body
     const generateduserId = uuid4()
     const hashedPassword = await bcrypt.hash(password, 10)
