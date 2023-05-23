@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
     res.json('Hello World')
 })
 
-app.post('/register', async (req, res) => {
+app.post('/signup', async (req, res) => {
     const client = new MongoClient(uri)
     console.log(req.body)
     const { email, password } = req.body
