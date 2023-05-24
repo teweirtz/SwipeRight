@@ -4,7 +4,6 @@ import Dashboard from './Pages/Dashboard.js';
 import OnBoarding from './Pages/Onboarding.js';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {useCookies} from 'react-cookie';
-import './index.css';
 
 
 const App = () => {

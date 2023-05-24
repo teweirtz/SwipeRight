@@ -31,17 +31,15 @@ const Dashboard = () => {
                 params: {gender: user?.gender_interest}
             })
             setGenderedUsers(response.data)
+            console.log('this is in the API call', response.data)
         } catch (error) {
             console.log(error)
         }
     }
 
+
     useEffect(() => {
         getUser()
-
-    }, [])
-
-    useEffect(() => {
         if (user) {
             getGenderedUsers()
         }
@@ -71,7 +69,7 @@ const Dashboard = () => {
         console.log(name + ' left the screen!')
     }
 
-    const matchedUserIds = user?.matches.map(({user_id}) => user_id).concat(userId)
+    const matchedUserIds = user?.matches?.map(({ user_id }) => user_id).concat(userId)
 
     const filteredGenderedUsers = genderedUsers?.filter(genderedUser => !matchedUserIds.includes(genderedUser.user_id))
 
