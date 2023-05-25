@@ -2,11 +2,12 @@ import express, { json } from 'express'
 const port = 8000
 import { MongoClient } from 'mongodb'
 import { v4 as uuid4 } from 'uuid'
-import { sign } from 'jsonwebtoken'
+import * as jwt from 'jsonwebtoken'
 import cors from 'cors'
 const uri = 'mongodb+srv://teweirtz:Ammo,dawg1@cluster0.tkes3cu.mongodb.net/Cluster0?retryWrites=true&w=majority'
 import { hash, compare } from 'bcrypt'
-require('dotenv').config()
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 const app = express()
 app.use(cors())
@@ -42,10 +43,10 @@ app.post('/signup', async (req, res) => {
         }
         const insertedUser = await users.insertOne(data)
 
-        const token = sign(insertedUser, sanitizedEmail, {
+        const token = jwt.default.sign(insertedUser, sanitizedEmail, {
             expiresIn: 60 *24,
         })
-        res.status(201).json({token})
+        res.status(201).json({token, userId: data.user_id})
     } catch (err) {
         console.log(err)
     } finally {
@@ -67,7 +68,7 @@ app.post('/login', async (req, res) => {
         const correctPassword = await compare(password, user.hashed_password)
 
         if (user && correctPassword) {
-            const token = sign(user, email, {
+            const token = jwt.default.sign(user, email, {
                 expiresIn: 60 * 24
             })
             res.status(201).json({token, userId: user.user_id})
